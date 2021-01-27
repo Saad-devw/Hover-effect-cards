@@ -73,7 +73,8 @@ body{
 }
 
 .back-flip{
-
+  box-sizing: border-box;
+  padding: 5px 0;
   width: 280px;
   height: 380px;
   background: #C8C6CB;
