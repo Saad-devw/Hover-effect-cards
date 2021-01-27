@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+*, *::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #181818;
+  font-family: Poppins, sans-serif;
+  color: white;
+  padding: 3%;
+  overflow: hidden;
+}
+
+.title{
+  color: inherit;
+  letter-spacing: 1px;
+  text-decoration: overline;
+}
+
+.title span{
+   color: #C41BD7;
+   font-size: 1.4em;
+ }
+
+ .flip{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+ .flip-container
+ {
+   width: 280px;
+   height: 380px;
+   background: transparent;
+   border: 1px solid transparent;
+   perspective: 1000px;
+   margin: 40px auto;
+ }
+
+.inner-flip{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  text-align: center;
+  transition: transform 0.8s ;
+}
+
+.flip-container:hover .inner-flip{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.front-flip, .back-flip{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.front-flip {
+  background: #C41BD7;
+  padding: 3px;
+}
+
+.front-flip img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.back-flip{
+
+  width: 280px;
+  height: 380px;
+  background: #C8C6CB;
+  transform: rotateY(180deg);
+}
+
+.back-flip .profile-image img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+.profile-image{
+  color: #181818;
+}
+
+
+.icons img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.icons img:hover{
+  background-color: aliceblue;
+}
+
+@media (max-width: 900px){
+  .flip{
+    display: flex;
+    flex-direction: column;
+  }
+  body{
+    overflow: scroll;
+  }
+}
